@@ -1,6 +1,8 @@
-﻿
 namespace CareersVeeamVacanciesTests.DataObjects
 {
+    /**
+    * Object to store incoming parameterized data
+    */
     public class Data
     {        
         public string Url { get; set; }
