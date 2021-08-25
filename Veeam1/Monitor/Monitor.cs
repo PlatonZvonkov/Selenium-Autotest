@@ -49,8 +49,7 @@ namespace Observing
                     .WaitForExit(argument.LifeTime * Constants.MINUTE);
                     Termination(id, argument.Name);
                 }
-            }
-            );
+            });
             // If its still alive we return nothing.
             return null;
         }
@@ -84,8 +83,6 @@ namespace Observing
                 Process.GetProcessById(id).Kill();
                 _logger.Info($"{name} terminated.");
             }
-        }        
-
-       
+        }
     }
 }
