@@ -31,7 +31,9 @@ namespace CareersVeeamVacanciesTests
             wait = new WebDriverWait(driver, new TimeSpan(0, 0, 3));
 
         }
-        
+        /**
+        * At the moment Test are written for only 1 case, but it can be changed to multiple testcases by adding parallel testcases 
+        */
         [TestCase(0)]
         public void Step1_EnteringCategoryList_WithoughtExceptions(int i)
         {
