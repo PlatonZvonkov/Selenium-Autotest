@@ -73,10 +73,10 @@ namespace Observing
             return Process.GetProcesses()
                 .Any(p => p.Id.Equals(id) && p.ProcessName.Equals(name));
         }
+        
         /**
          * Method that terminates process by id if its still alive after given argument's LifeTime.
          */
-
         private static void Termination(int id, string name)
         {
             if (IsProcessStillRunning(id, name))
