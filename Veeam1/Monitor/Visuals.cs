@@ -4,11 +4,14 @@ using System.Threading.Tasks;
 
 namespace Observing
 {
-    // Class for visual effects in concole app.
+    /**
+     * Class for visual effects in concole app.
+     */
     public class Visuals
     {
-        //
-        // Method that draw's message with countdown timer if application ends.
+        /**
+        * Method that draw's message with countdown timer if application ends.
+        */
         public static void DrawCountDown()
         {
             Console.WriteLine();
@@ -20,8 +23,9 @@ namespace Observing
                 seconds--;
             }
         }
-        //
-        // Just a spinning arrow for goodlooks.
+        /**
+        * Just spinning stick for good looks
+        */
         public static void Spinner()
         {
             Task.Run(async() =>
