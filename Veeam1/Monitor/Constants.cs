@@ -10,8 +10,8 @@ namespace Observing
         public const string HELP = "This utility is monitoring life time of tasks and application that running in windows enviroment." +
             "\nWhrite your arguments in following order: monitor.exe ApplicationName LifeTime(minutes) CheckTime(minutes).";
         public const string FORMAT = "Name WholeNumber WholeNumber";
-        //one minute is 60 000 millisseconds
-        internal const int MINUTE = 60000;
+        
+        internal const int MINUTE = 60000; //this constant can be changed for DEBUG perpouses
 
     }
 }
