@@ -7,6 +7,7 @@ namespace Observing
     public class Program
     {
         Argument argument;
+
         private static void Main(string[] args)
         {
             Program p = new Program();
@@ -14,6 +15,7 @@ namespace Observing
             p.Init(args);
             p.Run();
         }
+        
         public void Init(string[] arguments)
         {
             // Checking that there was all 3 arguments.
@@ -30,6 +32,8 @@ namespace Observing
 
             lifetime = Int32.Parse(arguments[1]);
             frequency = Int32.Parse(arguments[2]);
+            
+            // Checking arguments for bad values.
             if (lifetime < 0 || frequency<0)
             {
                 throw new ArgumentException($"{nameof(arguments)} cannot be of negative value!");
@@ -41,8 +45,8 @@ namespace Observing
             }
 
             argument = new Argument(arguments[0], lifetime, frequency);
-
         }
+        
         public void Run()
         {
             // Hash set to store id's of arguments name.
