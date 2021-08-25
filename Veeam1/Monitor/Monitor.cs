@@ -11,7 +11,7 @@ namespace Observing
     {
         private static Logger _logger = LogManager.GetCurrentClassLogger();
         /**
-         * This method is monitoring all processes id's that coresponds with given argument's name.
+         * This method is monitoring all processes id's that corresponds with given argument's name.
          */
         public static string Monitoring(Argument argument, HashSet<int> hash)
         {  
