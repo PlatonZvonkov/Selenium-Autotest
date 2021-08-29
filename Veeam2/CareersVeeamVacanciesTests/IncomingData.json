@@ -1,0 +1,19 @@
+{
+    "TestData": [
+        {                      
+            "Career": "Разработка продуктов",            
+            "TargetLanguage": "Английский",
+            "ExpectedNumber": 6           
+        },
+        {                     
+            "Career": "Разработка продуктов",
+            "TargetLanguage": "Русский",
+            "ExpectedNumber": 6
+        },
+        {                    
+            "Career": "QA / Тестирование",            
+            "TargetLanguage": "Русский",
+            "ExpectedNumber": 17 
+        }
+    ]
+}
