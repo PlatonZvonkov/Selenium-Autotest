@@ -18,6 +18,7 @@ namespace CareersVeeamVacanciesTests
         public void Setup()
         {
             driver = new FirefoxDriver();           
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
         }
 
         /**
@@ -28,8 +29,7 @@ namespace CareersVeeamVacanciesTests
         public void Check_AmmountOf_ExpectedVacances(TestData data)
         {   
             // Arrange    
-            var careerPage = new VacanciesRuPO(driver);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            var careerPage = new VacanciesRuPO(driver);            
             driver.Navigate().GoToUrl(careerPage.Url);
             driver.Manage().Window.Maximize();                  
 
