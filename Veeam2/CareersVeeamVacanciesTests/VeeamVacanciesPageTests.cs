@@ -21,8 +21,8 @@ namespace CareersVeeamVacanciesTests
         }
 
         /**
-         * At the moment of creation of this test 
-         * vacancies ammounts on site has been corresponding with JSON array's expected values
+         * At the moment of creation of this test, 
+         * vacancies amount on site has been corresponding with JSON array's expected values.
          **/
         [TestCaseSource("InLineData")]
         public void Check_AmmountOf_ExpectedVacances(TestData data)
