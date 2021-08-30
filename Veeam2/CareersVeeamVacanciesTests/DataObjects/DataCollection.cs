@@ -3,8 +3,8 @@
 
 namespace CareersVeeamVacanciesTests.DataObjects
 {
-    public class DataCollection : Data
+    public class DataCollection : TestData
     {
-        public List<Data> TestData { get; set; }
+        public List<TestData> TestData { get; set; }
     }
 }

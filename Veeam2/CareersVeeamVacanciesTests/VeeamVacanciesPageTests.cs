@@ -18,22 +18,26 @@ namespace CareersVeeamVacanciesTests
         public void Setup()
         {
             driver = new FirefoxDriver();           
-        } 
-        
-        [TestCaseSource("TestData")]
-        public void Check_AmmountOf_ExpectedVacances(Data data)
+        }
+
+        /**
+         * At the moment of creation of this test 
+         * vacancies ammounts on site have been corresponding with JSON array's expected values
+         **/
+        [TestCaseSource("InLineData")]
+        public void Check_AmmountOf_ExpectedVacances(TestData data)
         {   
             // Arrange    
-            var careerPage = new VeeamVacanciesPO(driver);
+            var careerPage = new VacanciesRuPO(driver);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             driver.Navigate().GoToUrl(careerPage.Url);
-            driver.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();                  
 
             // Act            
             careerPage.OpenCategoryList();
-            careerPage.SelectCareer(data);
+            careerPage.SelectCareer(data.Career);
             careerPage.OpenLanguageList();
-            careerPage.SelectLanguage(data);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            careerPage.SelectLanguage(data.TargetLanguage);                     
 
             //Assert
             Assert.IsTrue(careerPage.IsThereExpectedAmmount(data.ExpectedNumber));            
@@ -44,8 +48,12 @@ namespace CareersVeeamVacanciesTests
         {
             driver.Close();
         }
-        
-        public static IEnumerable<Data> TestData()
+
+        /**
+        * Method that provides test data for multiple test cases
+        * via extracting it from connection string (for now its just a file)
+        **/
+        public static IEnumerable<TestData> InLineData()
         {            
             ExternalData data = new ExternalData(
                 File.ReadAllText(
